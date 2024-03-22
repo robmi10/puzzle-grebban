@@ -34,7 +34,7 @@ const Board = (props: props) => {
                     <div key={i} className='relative'>
                         <div onClick={() => {
                             handlePosition(i)
-                        }} className={twMerge('border hover:bg-blue-600 transition-colors duration-200 absolute h-full w-full cursor-pointer bg-blue-400 rounded-xl flex justify-center items-center font-bold text-2xl',
+                        }} className={twMerge('border hover:bg-blue-600 transition-colors duration-200 absolute h-full w-full cursor-pointer bg-blue-400 rounded-xl flex justify-center items-center font-medium text-xl',
                             !column.value && 'hidden'
                         )}>
                             {column.value}
@@ -106,11 +106,11 @@ const Puzzle = () => {
 
 
     return (
-        <div className='w-full h-full flex justify-center items-center flex-col space-y-12'>
-            <div ref={containerRef} className='w-full h-2/4 border border-black rounded-md md:w-2/4 md:h-2/4 grid grid-cols-5'>
+        <div className='w-full h-full flex justify-center items-center flex-col space-y-12 p-8'>
+            <div ref={containerRef} className='w-full h-2/6 border border-gray-400 rounded-md md:w-2/4 md:h-2/4 grid grid-cols-5'>
                 <Board puzzleList={puzzleList} handlePosition={handlePosition} />
             </div >
-            <button className='border border-black h-12 w-24 md:w-56 md:h-24 rounded-full hover:bg-gray-800 transition-colors duration-200 ease-in-out bg-gray-600 text-white md:text-2xl' onClick={() => { shuffleList() }}>Slumpa</button>
+            <button className='border border-black h-12 w-24 md:w-40 md:h-16 rounded-full hover:bg-gray-800 transition-colors duration-200 ease-in-out bg-gray-600 text-white md:text-2xl' onClick={() => { shuffleList() }}>Slumpa</button>
         </div>
     )
 }
